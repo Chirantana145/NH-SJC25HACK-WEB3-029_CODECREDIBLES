@@ -1,0 +1,201 @@
+/* Basic Reset and Variables */
+:root {
+    --bg-dark: #1e1e2f;
+    --card-dark: #2a2a44;
+    --primary-blue: #5c62d6;
+    --primary-orange: #ff9800;
+    --risk-high: #f44336;
+    --risk-low: #4caf50;
+    --text-light: #ffffff;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+
+.dapp-container {
+    padding: 20px;
+    max-width: 1400px;
+    margin: auto;
+}
+
+/* Header and Status */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--card-dark);
+}
+
+.header h1 {
+    font-size: 1.8em;
+}
+
+.header-actions button {
+    margin-left: 10px;
+}
+
+.status-bar {
+    background-color: #3b3b5c;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Grid Layout */
+.main-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+/* Card Styling */
+.card {
+    background-color: var(--card-dark);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+    color: var(--primary-blue);
+    margin-top: 0;
+    font-size: 1.4em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.card-subtitle {
+    color: #b0b0d0;
+    font-size: 0.9em;
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
+
+/* Inputs and Buttons */
+input[type="text"], textarea {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+}
+
+.run-sim-btn {
+    background-color: var(--primary-orange);
+}
+
+.submit-trade-btn {
+    background-color: var(--risk-low);
+}
+
+.refresh-btn {
+    background-color: #6a6a8f;
+    margin-top: 10px;
+}
+
+.learn-more-btn {
+    background-color: #8c72e2;
+}
+
+.connect-wallet-btn {
+    background-color: var(--primary-orange);
+}
+
+button:hover {
+    filter: brightness(1.2);
+}
+
+/* Simulation Results */
+.simulation-results {
+    border-top: 1px dashed #444;
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+.risk-high { color: var(--risk-high); font-weight: bold; }
+.risk-low { color: var(--risk-low); font-weight: bold; }
+.profit { color: var(--risk-low); }
+.loss { color: var(--risk-high); }
+
+/* Live Attack Feed */
+.live-feed-card {
+    /* Animation for new attack */
+    transition: background-color 0.5s;
+}
+
+.live-feed-card.new-attack-pulse {
+    background-color: #4b4b66; 
+}
+
+.attack-list {
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.attack-item {
+    padding: 10px;
+    border-bottom: 1px solid #3b3b5c;
+}
+
+.attack-item:last-child {
+    border-bottom: none;
+}
+
+.attack-detail {
+    font-size: 0.8em;
+    color: #aaa;
+    margin: 5px 0 0;
+}
+
+/* Watchlist */
+.card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.card li {
+    background-color: #3b3b5c;
+    padding: 8px 10px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.remove-btn {
+    background-color: #d32f2f;
+    padding: 5px 10px;
+    font-size: 0.8em;
+}
+
+/* Chart */
+.chart-card {
+    height: 450px; 
+    display: flex;
+    flex-direction: column;
+}
